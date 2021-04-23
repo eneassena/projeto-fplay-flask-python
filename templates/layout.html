@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="../static/css/materialize.min.css">
+	 
+		<script type="text/javascript" src="../static/js/materialize.min.js"></script>
+		<script type="text/javascript" src="../static/js/jquery.js"></script>
+
+		{% block head %}
+		
+		<title>{% block title %}FPlayer{% endblock %}</title>
+		
+		{% endblock %}
+
+		<script type="text/javascript">
+			$('body').css('background', 'gray');
+			$(document).ready(function(){
+				$(".button-collapse").Sidenav();
+				$(".materialboxed").materialbox();
+			});
+		
+		</script>
+	</head>
+
+<body>
+ 	<nav>
+		<div class="nav-wrapper blue">
+			<a href="#!" class="brand-logo">FPlayer</a>
+			<a href="#mobile-demo" data-target="mobile-demo" class="sidenav-trigger button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="left hide-on-med-and-down">
+				<li><a href="{{url_for('home')}}">fplayer</a></li>
+			</ul>
+		</div>
+		<ul class="sidenav" id="mobile-demo">
+			<li><a href="{{url_for('home')}}">fplayer</a></li>
+		</ul>
+	</nav>
+
+	<div id="content" class="container">
+		{% block content%} {% endblock %}
+	</div>
+	
+	<hr>
+	<footer class="page-footer blue center-algin">
+		<p class="grey-text text-lighten-4"> E. D. S. Sena
+			
+		</p>
+	</footer>
+</body>
+</html>
